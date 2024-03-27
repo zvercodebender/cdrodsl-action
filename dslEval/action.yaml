@@ -34,13 +34,10 @@ runs:
         cd /app
         curl -L --output cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.5/cdro-cli-linux-amd64 2> /dev/null
         chmod +x cdro-cli
-        ls -Fla
         cd /cloudbees/workspace
-        ls -Fla
         /app/cdro-cli --url ${{ inputs.url }} \
                       --username ${{ inputs.username }} \
                       --password ${{ inputs.user-token }} \
-                      --file ${{ inputs.file }}  > results.json
+                      --file ${{ inputs.file }}  > results.json 2 /dev/null
 
-        ls -Fla
         cat results.json
