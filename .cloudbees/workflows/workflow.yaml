@@ -17,5 +17,5 @@ jobs:
           url: "https://flow-web.rbroker.linkpc.net/"
           username: ${{secrets.CB_USER}}
           user-token: ${{secrets.CB_PASSWD}}
-          file: test.dsl
+          file: "test.dsl"
           
