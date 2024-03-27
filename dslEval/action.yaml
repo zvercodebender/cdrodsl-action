@@ -32,8 +32,10 @@ runs:
         #set -x
         mkdir /app
         cd /app
-        curl -o cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.5/cdro-cli-linux-amd64 2> /dev/null
+        curl -L --output cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.5/cdro-cli-linux-amd64 2> /dev/null
         chmod +x cdro-cli
+        ls -Fla
+        /app/cdro
         cd /cloudbees/workspace
         ls -Fla
         /app/cdro-cli --url ${{ inputs.url }} \
