@@ -40,5 +40,5 @@ runs:
                       --username ${{ inputs.username }} \
                       --password ${{ inputs.user-token }} \
                       --file ${{ inputs.file }} \
-                      --output result.json
-        cat result.json
+                      --output /tmp/result.json
+        cat /tmp/result.json
