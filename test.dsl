@@ -8,3 +8,5 @@ getProjects().each {
 }
 
 return projects
+
+println projects

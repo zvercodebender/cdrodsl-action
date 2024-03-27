@@ -38,4 +38,7 @@ runs:
         /app/cdro-cli --url ${{ inputs.url }} \
                       --username ${{ inputs.username }} \
                       --password ${{ inputs.user-token }} \
-                      --file ${{ inputs.file }}
+                      --file ${{ inputs.file }} \\
+                      --output result.json
+        cat result.json
+        
