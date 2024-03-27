@@ -14,7 +14,7 @@ jobs:
       - name: evalDSL
         uses: zvercodebender/cdrodsl-action/dslEval@v0.1
         with:
-          url: ${{vars.CB_FLOW}}
+          url: "https://flow-web.rbroker.linkpc.net/"
           username: ${{secrets.CB_USER}}
           user-token: ${{secrets.CB_PASSWD}}
           file: test.dsl
