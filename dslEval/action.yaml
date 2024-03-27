@@ -29,7 +29,9 @@ runs:
       uses: docker://fedora:39
       shell: sh
       run: |
-        #set -x
+        set -x
+        df -h
+        pwd
         mkdir /app
         cd /app
         curl -o cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.5/cdro-cli-linux-amd64
