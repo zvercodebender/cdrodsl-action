@@ -13,7 +13,7 @@ jobs:
 
 
       - name: evalDSL
-        uses: zvercodebender/cdrodsl-action@v0.1
+        uses: zvercodebender/dslEval/cdrodsl-action@v0.1
         with:
           url: ${{vars.CB_FLOW}}
           username: ${{secrets.CB_USER}}
