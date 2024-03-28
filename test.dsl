@@ -9,7 +9,7 @@ getProjects().each {
   projects += it.name + "\n"
 }
 
-return projects
+//return projects
 
 def json_str = JsonOutput.toJson(projects)
 println(json_str)
