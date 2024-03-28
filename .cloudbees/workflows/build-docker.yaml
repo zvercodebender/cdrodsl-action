@@ -5,13 +5,14 @@ on:
   push:
     branches:
       - "docker"
+
 jobs:
   build-and-publish:
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
 
-     - name: Set Version
+      - name: Set Version
         id: set-tag
         uses: docker://fedora:39
         shell: sh
