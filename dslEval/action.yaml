@@ -26,18 +26,12 @@ runs:
   steps:
     - id: invoke-cdrodsl-action
       name: evalDSL
-      uses: docker://fedora:39
+      uses: docker://rbroker/cdro-cli:latest
       shell: sh
       run: |
-        #set -x
-        mkdir /app
-        cd /app
-        curl -L --output cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.5/cdro-cli-linux-amd64 2> /dev/null
-        chmod +x cdro-cli
-        cd /cloudbees/workspace
         /app/cdro-cli --url ${{ inputs.url }} \
                       --username ${{ inputs.username }} \
                       --password ${{ inputs.user-token }} \
-                      --file ${{ inputs.file }}  > results.json 2 /dev/null
+                      --file ${{ inputs.file }}  > results.json 2> /dev/null
 
         cat results.json
