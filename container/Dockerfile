@@ -9,6 +9,8 @@ RUN mkdir -p /app && \
     curl -L --output cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.5/cdro-cli-linux-amd64 && \
     chmod +x cdro-cli
 
-RUN cp container/evalDSL.sh /app/evalDSL.sh && \
+RUN find .
+
+RUN cp evalDSL.sh /app/evalDSL.sh && \
     chmod +x /app/evalDSL.sh
 
