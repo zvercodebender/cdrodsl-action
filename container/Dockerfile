@@ -6,7 +6,7 @@ RUN dnf -y update && \
 
 RUN mkdir -p /app && \
     cd /app && \
-    curl -L --output cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.6/cdro-cli-linux-amd64 && \
+    curl -L --output cdro-cli https://github.com/zvercodebender/cdro-cli/releases/download/0.7/cdro-cli-linux-amd64 && \
     chmod +x cdro-cli
 
 RUN find /cloudbees/workspace
