@@ -12,7 +12,7 @@ jobs:
         uses: cloudbees-io/checkout@v1
 
       - name: evalDSL
-        uses: zvercodebender/cdrodsl-action/dslEval@v0.1
+        uses: zvercodebender/cdrodsl-action/dslEval@v0.2
         with:
           url: "${{ vars.CB_FLOW }}"
           username: ${{secrets.CB_USER}}
