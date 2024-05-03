@@ -4,18 +4,18 @@ name: My automation
 on:
   push:
     branches:
-      - "main"
+      - main
 jobs:
   build-and-publish:
     steps:
-      - name: Checkout
-        uses: cloudbees-io/checkout@v1
-
-      - name: evalDSL
-        uses: zvercodebender/cdrodsl-action/dslEval@v0.2
+      - uses: cloudbees-io/checkout@v1
+        name: Checkout
+      - uses: zvercodebender/cdrodsl-action/dslEval@v0.2
+        name: evalDSL
         with:
-          url: "${{ vars.CB_FLOW }}"
+          url: ${{ vars.CB_FLOW }}
           username: ${{secrets.CB_USER}}
           user-token: ${{secrets.CB_PASSWD}}
-          file: "test.dsl"
-# Test 1
+          file: test.dsl
+    outputs:
+      results_json: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
