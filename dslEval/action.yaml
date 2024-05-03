@@ -21,7 +21,7 @@ inputs:
     required: true
 outputs:
     results_json:
-      descriptioin: 'JSON results from DSL/YAML file'
+      description: 'JSON results from DSL/YAML file'
       value: ${{steps.invoke-cdrodsl-action.output.results_json}}
 
 runs:
