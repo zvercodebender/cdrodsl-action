@@ -20,9 +20,9 @@ inputs:
     description: 'DSL/YAML file in workspace to run'
     required: true
 outputs:
-    results_json:
+    resultsjson:
       description: 'JSON results from DSL/YAML file'
-      value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
+      value: ${{steps.invoke-cdrodsl-action.outputs.resultsjson}}
 
 runs:
   using: composite
@@ -37,6 +37,6 @@ runs:
                       --password ${{ inputs.user-token }} \
                       --file ${{ inputs.file }}  > results.json
 
-        cat results.json > $CLOUDBEES_OUTPUTS/results_json
+        cat results.json > $CLOUDBEES_OUTPUTS/resultsjson
         cat results.json
  
