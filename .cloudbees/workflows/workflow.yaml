@@ -17,9 +17,7 @@ jobs:
           username: ${{secrets.CB_USER}}
           user-token: ${{secrets.CB_PASSWD}}
           file: test.dsl
-        env:
-          results_json: ${{ steps.evalDSL.outputs.results_json }}
-      - uses: docker://fedora:39
+     - uses: docker://fedora:39
         name: showJSON
         id: showJSON
         shell: sh
