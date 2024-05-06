@@ -37,5 +37,6 @@ runs:
                       --password ${{ inputs.user-token }} \
                       --file ${{ inputs.file }}  > results.json
 
-        cat results.json
         cat results.json > "$CLOUDBEES_OUTPUTS/results_json"
+        cat results.json
+ 
