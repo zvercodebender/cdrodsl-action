@@ -40,5 +40,5 @@ runs:
         cat results.json >> $CLOUDBEES_OUTPUTS/results_json
         cat results.json
       env:
-        DSLRESULTS: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
+        DSLRESULTS: ${{outputs.results_json}}
     
