@@ -19,3 +19,10 @@ jobs:
           file: test.dsl
         env:
           results_json: ${{ steps.evalDSL.outputs.results_json }}
+      - uses: fedora:39
+        name: showJSON
+        id: showJSON
+        shell: sh
+        run: |
+          echo "${{steps.evalDSL.outputs.results_json}}"
+
