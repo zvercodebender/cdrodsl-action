@@ -22,7 +22,7 @@ inputs:
 outputs:
     results_json:
       description: 'JSON results from DSL/YAML file'
-      value: ${{steps.evalDSL.outputs.results_json}}
+      value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
 
 runs:
   using: composite
@@ -40,5 +40,5 @@ runs:
         cat results.json > $CLOUDBEES_OUTPUTS/results_json
         cat results.json
       env:
-        DSLRESULTS: ${{steps.evalDSL.outputs.results_json}}
+        DSLRESULTS: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
     
