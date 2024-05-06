@@ -18,4 +18,4 @@ jobs:
           user-token: ${{secrets.CB_PASSWD}}
           file: test.dsl
         env:
-          results_json: ${{ steps.action.outputs.results_json }}
+          results_json: ${{ steps.evalDSL.outputs.results_json }}
