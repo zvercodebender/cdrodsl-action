@@ -12,6 +12,7 @@ jobs:
         name: Checkout
       - uses: zvercodebender/cdrodsl-action/dslEval@v0.2
         name: evalDSL
+        id: invoke-cdrodsl-action
         with:
           url: ${{ vars.CB_FLOW }}
           username: ${{secrets.CB_USER}}
