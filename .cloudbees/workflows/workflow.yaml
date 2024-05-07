@@ -22,5 +22,5 @@ jobs:
         id: showJSON
         shell: sh
         run: |
-          echo "${{step.evalDSL.outputs.results_json}}"
+          echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
 
