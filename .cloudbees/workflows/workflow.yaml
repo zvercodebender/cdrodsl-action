@@ -23,5 +23,9 @@ jobs:
         id: showJSON
         shell: sh
         run: |
-          echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}" | sed "s/:/=/g" | sed "s/\\n/\\r\\n/g"
+          echo "==========="
+          echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
+          echo "==========="
+          echo "${{steps.invoke-cdrodsl-action.outputs.testproperty}}"
+          echo "==========="
 
