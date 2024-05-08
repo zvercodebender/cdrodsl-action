@@ -24,8 +24,8 @@ jobs:
         shell: sh
         run: |
           echo "==========="
-          echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
+          echo "${{steps.invoke-cdrodsl-action.results_json}}"
           echo "==========="
-          echo "${{steps.invoke-cdrodsl-action.outputs.testproperty}}"
+          echo "${{steps.invoke-cdrodsl-action.testproperty}}"
           echo "==========="
 
