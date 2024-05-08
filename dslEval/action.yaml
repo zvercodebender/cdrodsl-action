@@ -23,6 +23,9 @@ outputs:
     results_json:
       description: 'JSON results from DSL/YAML file'
       # value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
+    testproperty:
+      description: 'JSON results from DSL/YAML file'
+      value: ${{steps.invoke-cdrodsl-action.outputs.testpropertyn}}
 
 runs:
   using: composite
@@ -39,4 +42,5 @@ runs:
 
         cat results.json >> $CLOUDBEES_OUTPUTS/results_json
         cat results.json
+         echo " date +%Y%m%d%H%M" >> $CLOUDBEES_OUTPUTS/testproperty
 
