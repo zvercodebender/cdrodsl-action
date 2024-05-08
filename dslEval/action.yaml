@@ -25,7 +25,7 @@ outputs:
       # value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
     testproperty:
       description: 'JSON results from DSL/YAML file'
-      value: ${{steps.invoke-cdrodsl-action.outputs.testpropertyn}}
+      #value: ${{steps.invoke-cdrodsl-action.outputs.testpropertyn}}
 
 runs:
   using: composite
