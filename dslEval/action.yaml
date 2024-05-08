@@ -19,13 +19,13 @@ inputs:
   file:
     description: 'DSL/YAML file in workspace to run'
     required: true
-outputs:
-    results_json:
-      description: 'JSON results from DSL/YAML file'
-      # value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
-    testproperty:
-      description: 'JSON results from DSL/YAML file'
-      #value: ${{steps.invoke-cdrodsl-action.outputs.testpropertyn}}
+# outputs:
+#     results_json:
+#       description: 'JSON results from DSL/YAML file'
+#       # value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
+#     testproperty:
+#       description: 'JSON results from DSL/YAML file'
+#       #value: ${{steps.invoke-cdrodsl-action.outputs.testpropertyn}}
 
 runs:
   using: composite
