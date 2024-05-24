@@ -23,6 +23,7 @@ jobs:
         id: showJSON
         shell: sh
         run: |
+          echo "Hello"
           echo "==========="
           echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
           echo "==========="
