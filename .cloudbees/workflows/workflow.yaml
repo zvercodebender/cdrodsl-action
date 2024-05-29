@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: cloudbees-io/checkout@v1
         name: Checkout
-      - uses: zvercodebender/cdrodsl-action/dslEval@v0.2
+      - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
         name: evalDSL
         id: invoke-cdrodsl-action
         with:
