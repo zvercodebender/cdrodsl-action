@@ -10,6 +10,13 @@ jobs:
     steps:
       - uses: cloudbees-io/checkout@v1
         name: Checkout
+      - uses: docker://fedora:39
+        name: DNSCheck
+        id: DNSCheck
+        shell: sh
+        run: |
+          nslookup ${{ vars.CB_FLOW }}
+          dig ${{ vars.CB_FLOW }}     
       - uses: zvercodebender/cdrodsl-action/dslEval@v0.2
         name: evalDSL
         id: invoke-cdrodsl-action
