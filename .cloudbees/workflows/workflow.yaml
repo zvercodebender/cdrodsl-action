@@ -15,6 +15,7 @@ jobs:
         id: DNSCheck
         shell: sh
         run: |
+          dnf -y install bind-utils
           nslookup ${{ vars.CB_FLOW }}
           dig ${{ vars.CB_FLOW }}     
       - uses: zvercodebender/cdrodsl-action/dslEval@v0.2
