@@ -16,8 +16,8 @@ jobs:
         shell: sh
         run: |
           dnf -y install bind-utils
-          nslookup ${{ vars.CB_FLOW }}
-          dig ${{ vars.CB_FLOW }}     
+          nslookup flow-web.rbroker.linkpc.net
+          dig flow-web.rbroker.linkpc.net    
       - uses: zvercodebender/cdrodsl-action/dslEval@v0.2
         name: evalDSL
         id: invoke-cdrodsl-action
