@@ -20,10 +20,8 @@ inputs:
     description: 'DSL/YAML file in workspace to run'
     required: true
 outputs:
-    results_json: 
-      value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
-    testproperty: 
-      value: ${{steps.invoke-cdrodsl-action.outputs.testproperty}}
+  results_json: 
+    value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
 
 runs:
   using: composite
@@ -40,6 +38,4 @@ runs:
 
         cat results.json >> "$CLOUDBEES_OUTPUTS/results_json"
         cat results.json
-        echo " date +%Y%m%d%H%M" >> "$CLOUDBEES_OUTPUTS/testproperty"
-        echo " date +%Y%m%d%H%M"
 

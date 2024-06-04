@@ -26,6 +26,3 @@ jobs:
           echo "==========="
           echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
           echo "==========="
-          echo "${{steps.invoke-cdrodsl-action.outputs.testproperty}}"
-          echo "==========="
-# comment 4
