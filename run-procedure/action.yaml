@@ -34,7 +34,7 @@ runs:
       shell: sh
       run: |
         #somemagic "${{inputs.actualParameter}}" >> $CLOUDBEES_OUTPUTS/args
-        echo "Actual Parameter: \"${{inputs.actualParameter}}\""
+        echo "Actual Parameter: \"${{inputs.actualParameter}}\" "
     # - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
     #   name: evalDSL
     #   id: invoke-cdrodsl-action
