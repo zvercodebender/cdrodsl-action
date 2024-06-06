@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: cloudbees-io/checkout@v1
         name: Checkout
-      - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
+      - uses: zvercodebender/cdrodsl-action/dslEval@v0.4
         name: evalDSL
         id: invoke-cdrodsl-action
         with:
@@ -26,3 +26,16 @@ jobs:
           echo "==========="
           echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
           echo "==========="
+
+      - name: Run Procedure
+        uses: zvercodebender/cdrodsl-action/run-procedure@v1
+        with:
+          url: ${{ vars.CB_FLOW }}
+          username: ${{secrets.CB_USER}}
+          user-token: ${{secrets.CB_PASSWD}}
+          projectName: My project
+          procedureName: My procedure
+          actualParameter: |
+            param1: param1 value
+            param2: 1.0
+

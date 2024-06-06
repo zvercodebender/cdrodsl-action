@@ -1,0 +1,46 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: action
+name: "Run procedure"
+inputs:
+  url:
+    description: 'CDRO URL'
+    required: false
+    default: 'https://sda.preview.cb-demos.io'
+  username:
+    description: 'CDRO Username'
+    required: true
+  user-token:
+    description: 'CDRO User token'
+    required: true
+  procedureName:
+    description: 'Name of the CDRO procedure to run'
+    required: true
+  projectName:
+    description: 'Name of the CDRO project where the procedure is defined'
+    required: true
+  actualParameter:
+    description: 'Parameters to pass to the procedure'
+    required: true
+outputs:
+  jobId: 
+    value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
+
+runs:
+  using: composite
+  steps:
+    - uses: docker://fedora:39
+      name: Format actualParameters
+      id: formatParameters
+      shell: sh
+      run: |
+        #somemagic "${{inputs.actualParameter}}" >> $CLOUDBEES_OUTPUTS/args
+        echo "Actual Parameter: ${{inputs.actualParameter}}"
+    # - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
+    #   name: evalDSL
+    #   id: invoke-cdrodsl-action
+    #   with:
+    #     url: ${{ inputs.url }}
+    #     username: ${{ inputs.username }}
+    #     user-token: ${{ inputs.user-token}}
+    #     file: runProcedure.dsl
+    #     args: $${{ steps.formatParameters.args  }}
