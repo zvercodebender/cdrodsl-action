@@ -33,10 +33,11 @@ runs:
       id: formatParameters
       shell: sh
       run: |
-        dnf -y install python3-pip
-        pip install shyaml
+        dnf -y install wget
+        wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
+        chmod +x /usr/bin/yq
         #somemagic "${{inputs.actualParameter}}" >> $CLOUDBEES_OUTPUTS/args
-        cat ${{inputs.actualParameter}} | shyaml get-value param2
+        yq ${{inputs.actualParameter}}
    # - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
     #   name: evalDSL
     #   id: invoke-cdrodsl-action
