@@ -33,11 +33,11 @@ runs:
       id: formatParameters
       shell: sh
       run: |
+        dnf -y install python3-pip
+        pip intall shyaml
         #somemagic "${{inputs.actualParameter}}" >> $CLOUDBEES_OUTPUTS/args
-        TEST="${{inputs.actualParameter}}"
-        echo "Test"
-        echo $TEST
-    # - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
+        cat ${{inputs.actualParameter}} | shyaml get-value param2
+   # - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
     #   name: evalDSL
     #   id: invoke-cdrodsl-action
     #   with:
