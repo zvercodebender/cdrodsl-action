@@ -34,7 +34,7 @@ runs:
       shell: sh
       run: |
         dnf -y install python3-pip
-        pip intall shyaml
+        pip install shyaml
         #somemagic "${{inputs.actualParameter}}" >> $CLOUDBEES_OUTPUTS/args
         cat ${{inputs.actualParameter}} | shyaml get-value param2
    # - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
