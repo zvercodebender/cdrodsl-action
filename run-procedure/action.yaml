@@ -21,9 +21,9 @@ inputs:
   actualParameter:
     description: 'Parameters to pass to the procedure'
     required: true
-outputs:
-  jobId: 
-    value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
+# outputs:
+#   jobId: 
+#     value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
 
 runs:
   using: composite
