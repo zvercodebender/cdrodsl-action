@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 jobs:
   build-and-publish:
     steps:
@@ -26,16 +27,3 @@ jobs:
           echo "==========="
           echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
           echo "==========="
-
-      # - name: Run Procedure
-      #   uses: zvercodebender/cdrodsl-action/run-procedure@v0.4
-      #   with:
-      #     url: ${{ vars.CB_FLOW }}
-      #     username: ${{secrets.CB_USER}}
-      #     user-token: ${{secrets.CB_PASSWD}}
-      #     projectName: My project
-      #     procedureName: My procedure
-      #     actualParameter: |
-      #       param1: param1 value
-      #       param2: 1.0
-
