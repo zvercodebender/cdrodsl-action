@@ -16,14 +16,6 @@ jobs:
           username: ${{secrets.CB_USER}}
           user-token: ${{secrets.CB_PASSWD}}
           file: test.dsl
-      - uses: docker://fedora:39
-        name: showJSON
-        id: showJSON
-        shell: sh
-        run: |
-          echo "==========="
-          echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
-          echo "==========="
       - uses: zvercodebender/cdrodsl-action/run-procedure@v0.4
         name: runProcedure
         id: run-procedure
@@ -36,3 +28,11 @@ jobs:
           actualParameter: |
            key1: "value1"
            key2: "value2"
+      - uses: docker://fedora:39
+        name: showJSON
+        id: showJSON
+        shell: sh
+        run: |
+          echo "==========="
+          echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
+          echo "==========="
