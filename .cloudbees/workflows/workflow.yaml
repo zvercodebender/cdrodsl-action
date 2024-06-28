@@ -25,9 +25,7 @@ jobs:
           user-token: ${{secrets.CB_PASSWD}}
           procedureName: "ChuckNorisQuotes"
           projectName: "MyProject"
-          actualParameter: 
-           key1: "value1"
-           key2: "value2"
+          actualParameter: {"key1": "value1", "key2": "value2"}
       - uses: docker://fedora:39
         name: showJSON
         id: showJSON
