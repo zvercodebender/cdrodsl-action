@@ -24,3 +24,15 @@ jobs:
           echo "==========="
           echo "${{steps.invoke-cdrodsl-action.outputs.results_json}}"
           echo "==========="
+      - uses: zvercodebender/cdrodsl-action/run-procedure@v0.4
+        name: runProcedure
+        id: run-procedure
+        with:
+          url: ${{ vars.CB_FLOW }}
+          username: ${{secrets.CB_USER}}
+          user-token: ${{secrets.CB_PASSWD}}
+          procedureName: "ChuckNorisQuotes"
+          projectName: "MyProject"
+          actualParameter: |
+           key1: "value1"
+           key2: "value2"

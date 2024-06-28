@@ -38,12 +38,12 @@ runs:
         chmod +x /usr/bin/yq
         #somemagic "${{inputs.actualParameter}}" >> $CLOUDBEES_OUTPUTS/args
         yq "${{inputs.actualParameter}}"
-   # - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
-    #   name: evalDSL
-    #   id: invoke-cdrodsl-action
-    #   with:
-    #     url: ${{ inputs.url }}
-    #     username: ${{ inputs.username }}
-    #     user-token: ${{ inputs.user-token}}
-    #     file: runProcedure.dsl
-    #     args: $${{ steps.formatParameters.args  }}
+  #  - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
+  #     name: evalDSL
+  #     id: invoke-cdrodsl-action
+  #     with:
+  #       url: ${{ inputs.url }}
+  #       username: ${{ inputs.username }}
+  #       user-token: ${{ inputs.user-token}}
+  #       file: runProcedure.dsl
+  #       args: $${{ steps.formatParameters.args  }}
