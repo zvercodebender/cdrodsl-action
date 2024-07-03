@@ -18,12 +18,12 @@ inputs:
   projectName:
     description: 'Name of the CDRO project where the procedure is defined'
     required: true
-  actualParameter:
+  actualParameters:
     description: 'Parameters to pass to the procedure'
     required: true
-# outputs:
-#   jobId: 
-#     value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
+outputs:
+  jobId: 
+    value: ${{steps.invoke-cdrodsl-action.outputs.results_json}}
 
 runs:
   using: composite
@@ -33,11 +33,9 @@ runs:
       id: formatParameters
       shell: sh
       run: |
-        dnf -y install wget
-        wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
-        chmod +x /usr/bin/yq
+        echo ${{inputs.actualParameters}}
+
         #somemagic "${{inputs.actualParameter}}" >> $CLOUDBEES_OUTPUTS/args
-        yq "${{inputs.actualParameter}}"
   #  - uses: zvercodebender/cdrodsl-action/dslEval@v0.3
   #     name: evalDSL
   #     id: invoke-cdrodsl-action
